@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Smc</string>
+    <string name="action_settings">Settings</string>
+    <string name="connectionButton">Connect</string>
+    <string name="connectionText">IP: </string>
+    <string name="default_range">192.168.1.</string>
+
+</resources>
