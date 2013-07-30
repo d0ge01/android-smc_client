@@ -6,5 +6,7 @@
     <string name="connectionButton">Connect</string>
     <string name="connectionText">IP: </string>
     <string name="default_range">192.168.1.</string>
+    <string name="title_activity_chat">Chat</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
