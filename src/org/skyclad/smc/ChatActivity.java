@@ -1,5 +1,11 @@
 package org.skyclad.smc;
 
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +13,6 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class ChatActivity extends Activity {
 
@@ -20,11 +25,29 @@ public class ChatActivity extends Activity {
 		
 		Intent intent = getIntent();
 	    String ip = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+	    String message = "";
+	    String output = "";
 	    
+	    /*
 	    ip = "Connection to " + ip;
 	    TextView textView = (TextView) findViewById(R.id.chat_log);
 	    textView.setTextSize(20);
 	    textView.setText(ip);
+	    */
+	    EditText edittext_message = (EditText) findViewById(R.id.message_input);
+	    message = (String) edittext_message.getText().toString();
+	    
+	    try {
+			Socket clientSocket = new Socket(ip, 12345);
+			DataOutputStream outToServer = (DataOutputStream) clientSocket.getOutputStream();
+			outToServer.writeChars(message);
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**

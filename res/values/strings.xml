@@ -7,6 +7,7 @@
     <string name="connectionText">IP: </string>
     <string name="default_range">192.168.1.</string>
     <string name="title_activity_chat">Chat</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="message_example">Hello world!</string>
+    <string name="send_string">Send..</string>
 
 </resources>
